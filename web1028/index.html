@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>每秒加一範例</title>
+</head>
+<body>
+
+    <!-- 顯示數字的位置 -->
+    <div id="counter">0</div>
+     
+    <script>
+        // 1. 初始化計數器變數
+    {
+      let count=0 ;
+     
+      // let num={number:0};
+      // const a={ name:"1"};
+        
+        // 2. 取得網頁中的 DOM 元素
+        const counterElement = document.getElementById('counter');
+
+        // 3. 使用 setInterval 每 1000 毫秒（即 1 秒）執行一次
+        setInterval(() => {
+            
+          // count++; // 數字加 1
+         // num.number = num.number+1;
+         count=count+1;
+       window.sharedata = count;
+           // countnum.num=String(count);
+            counterElement.textContent = count ; // 更新網頁顯示
+        }, 200);
+        //const btn = document.getElementById('aaa')
+      const counterElement2 = document.getElementById('a');
+         
+    }
+    </script>
+    
+<p>這裡有燈泡，當計時器到10，讓燈泡點亮</p>
+<script>
+    
+function light(sw) 
+{
+  var pic;
+  if (sw == 0) {
+    pic = "pic//pic_bulboff.gif"
+  } else {
+    pic = "pic//pic_bulbon.gif"
+  }
+  document.getElementById('myImage').src = pic;
+}
+</script>
+<!-- 1. 修改 onclick 呼叫你自己定義的函式 -->
+<button type="button" onclick="myReload()">重新整理網頁</button>
+
+<script>
+    
+        function myReload() {
+        // 在這裡寫你的判斷式或邏輯
+        if (true) {  
+            // 3. 條件成立後，在這裡才執行瀏覽器內建的重新整理
+            window.location.reload();
+            // 凍結物件
+           light(0);
+        }
+    // 2. 定義一個屬於你自己的函式名稱
+    }
+    
+    
+</script>
+
+<script>
+   
+</script>
+
+<button type="button2" onclick="light(1);handleClick()">Light On</button>
+<script>
+ function handleClick()
+ {
+   //light(1);
+      
+        if(window.sharedata===10)
+        {
+          //document.getElementById('myImage').src = "pic//pic_bulbon.gif";
+         
+          
+         document.getElementById('myImage').src = "pic//pic_bulbon.gif";
+         setTimeout(() => {
+         alert("成功");
+         window.location.reload();
+         }, 50);
+         /*if(document.getElementById('myImage').src.includes("pic//pic_bulbon.gif"))
+         {
+          //alert("成功22");
+          const originalAlert = window.alert;
+          window.alert = function(message) {
+             originalAlert(message);
+
+            console.log("Alert被觸發了，內容為",message);
+
+             window.location.reload();
+
+            //originalAlert(message);
+
+            //onAlertClosed();
+          };
+
+          alert("成功");
+         }*/
+          
+        }
+        else
+        {
+          const originalAlert2 = window.alert;
+          window.alert = function(message) {
+             originalAlert2(message);
+
+            console.log("Alert被觸發了，內容為",message);
+
+             window.location.reload();
+
+            //originalAlert(message);
+
+            //onAlertClosed();
+          };
+          alert("失敗");
+        }
+
+        }
+</script>
+<img id="myImage" src="pic//pic_bulboff.gif" width="100" height="180">
+
+
+ 
+</body>
+</html>
